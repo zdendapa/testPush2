@@ -25,6 +25,8 @@
     -->
 
     <gap:plugin name="com.phonegap.plugins.pushplugin" />
+    <gap:plugin name="org.apache.cordova.device" />
+
 
     <feature name="http://api.phonegap.com/1.0/device" />
 
