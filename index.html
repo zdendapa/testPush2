@@ -11,6 +11,7 @@
 
 <script type="text/javascript">
 
+    /*
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
         document.addEventListener("deviceready", onDeviceReady, false);
     } else {
@@ -18,10 +19,15 @@
             onDeviceReady();
         }, false);
     }
+*/
+    document.addEventListener("deviceready", onDeviceReady, false);
+    //onDeviceReady();
 
     var pushNotification;
 
     function onDeviceReady() {
+        alert("onDeviceReady");
+
         $("#app-status-ul").append('<li>deviceready event received</li>');
 
         document.addEventListener("backbutton", function(e)
@@ -46,6 +52,7 @@
             pushNotification = window.plugins.pushNotification;
             if (device.platform == 'android' || device.platform == 'Android') {
                 $("#app-status-ul").append('<li>registering android</li>');
+                alert("android reg");
                 pushNotification.register(successHandler, errorHandler, {"senderID":"661780372179","ecb":"onNotificationGCM"});		// required!
             } else {
                 $("#app-status-ul").append('<li>registering iOS</li>');
